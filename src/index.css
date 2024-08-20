@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Jim+Nightshade&family=Poppins&family=Roboto&family=Rubik+Glitch&display=swap');
+body {
+    font-family: 'Roboto', sans-serif;
+    overflow-x: hidden;
+}
+.logo {
+    font-family: 'Jim Nightshade', cursive;
+}
+
