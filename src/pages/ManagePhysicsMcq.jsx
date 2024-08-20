@@ -12,7 +12,7 @@ const ManagePhysicsMcq = () => {
         // Fetch existing questions from the server
         const fetchQuestions = async () => {
             try {
-                const response = await axios.get('http://localhost:4000/physicsquestions/');
+                const response = await axios.get('https://entry-hub-backend.vercel.app/physicsquestions/');
                 setQuestions(response.data);
             } catch (error) {
                 console.error('Error fetching questions:', error);
@@ -44,7 +44,7 @@ const ManagePhysicsMcq = () => {
 
     const handleUpdateClick = async () => {
         try {
-            const response = await axios.put(`http://localhost:4000/physicsquestions/update/${selectedQuestionId}`, {
+            const response = await axios.put(`https://entry-hub-backend.vercel.app/physicsquestions/update/${selectedQuestionId}`, {
                 questionText: newQuestion,
                 options: newOptions,
                 correctOption: correctOption - 1,
@@ -71,7 +71,7 @@ const ManagePhysicsMcq = () => {
     // Define addNewQuestion function here
     const addNewQuestion = async () => {
         try {
-            const response = await axios.post('http://localhost:4000/physicsquestions/create', {
+            const response = await axios.post('https://entry-hub-backend.vercel.app/physicsquestions/create', {
                 questionText: newQuestion,
                 options: newOptions,
                 correctOption: correctOption - 1,
@@ -92,7 +92,7 @@ const ManagePhysicsMcq = () => {
 
     const deleteQuestion = async (questionId) => {
         try {
-            const response = await axios.delete(`http://localhost:4000/physicsquestions/${questionId}`);
+            const response = await axios.delete(`https://entry-hub-backend.vercel.app/physicsquestions/${questionId}`);
 
             if (response.status === 200) {
                 // Successfully deleted the question

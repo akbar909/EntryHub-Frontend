@@ -15,7 +15,7 @@ const Login = () => {
   const handleLogin = async () => {
     try {
         // Make an API request to check if the user exists in the database
-        const response = await axios.get(`http://localhost:4000/users/${username}`);
+        const response = await axios.get(`https://entry-hub-backend.vercel.app/users/${username}`);
 
         console.log('Backend Response:', response.data);
 

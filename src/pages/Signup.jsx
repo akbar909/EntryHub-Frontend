@@ -65,7 +65,7 @@ const Signup = () => {
         } else {
             try {
                 // Backend API call
-                const response = await axios.post('http://localhost:4000/users', {
+                const response = await axios.post('https://entry-hub-backend.vercel.app/users', {
                     name: userData.name,
                     email: userData.email,
                     password: userData.password,

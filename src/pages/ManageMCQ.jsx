@@ -12,7 +12,7 @@ const ManageMCQ = () => {
         // Fetch existing questions from the server
         const fetchQuestions = async () => {
             try {
-                const response = await axios.get('http://localhost:4000/englishquestions/');
+                const response = await axios.get('https://entry-hub-backend.vercel.app/englishquestions/');
                 setQuestions(response.data);
             } catch (error) {
                 console.error('Error fetching questions:', error);
@@ -44,7 +44,7 @@ const ManageMCQ = () => {
 
     const handleUpdateClick = async () => {
         try {
-            const response = await axios.put(`http://localhost:4000/englishquestions/update/${selectedQuestionId}`, {
+            const response = await axios.put(`https://entry-hub-backend.vercel.app/englishquestions/update/${selectedQuestionId}`, {
                 questionText: newQuestion,
                 options: newOptions,
                 correctOption: correctOption - 1,
@@ -71,7 +71,7 @@ const ManageMCQ = () => {
     // Define addNewQuestion function here
     const addNewQuestion = async () => {
         try {
-            const response = await axios.post('http://localhost:4000/englishquestions/create', {
+            const response = await axios.post('https://entry-hub-backend.vercel.app/englishquestions/create', {
                 questionText: newQuestion,
                 options: newOptions,
                 correctOption: correctOption - 1,
@@ -92,7 +92,7 @@ const ManageMCQ = () => {
 
     const deleteQuestion = async (questionId) => {
         try {
-            const response = await axios.delete(`http://localhost:4000/englishquestions/${questionId}`);
+            const response = await axios.delete(`https://entry-hub-backend.vercel.app/englishquestions/${questionId}`);
 
             if (response.status === 200) {
                 // Successfully deleted the question

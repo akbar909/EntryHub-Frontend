@@ -18,7 +18,7 @@ const Englishmcq = () => {
       setError(null);
 
       try {
-        const response = await axios.get('http://localhost:4000/englishquestions/');
+        const response = await axios.get('https://entry-hub-backend.vercel.app/englishquestions/');
         const data = response.data;
 
         if (Array.isArray(data)) {

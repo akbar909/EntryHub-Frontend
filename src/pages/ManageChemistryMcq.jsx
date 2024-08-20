@@ -12,7 +12,7 @@ const ManageChemistryMcq = () => {
         // Fetch existing questions from the server
         const fetchQuestions = async () => {
             try {
-                const response = await axios.get('http://localhost:4000/chemistryquestions/');
+                const response = await axios.get('https://entry-hub-backend.vercel.app/chemistryquestions/');
                 setQuestions(response.data);
             } catch (error) {
                 console.error('Error fetching questions:', error);
@@ -44,7 +44,7 @@ const ManageChemistryMcq = () => {
 
     const handleUpdateClick = async () => {
         try {
-            const response = await axios.put(`http://localhost:4000/chemistryquestions/update/${selectedQuestionId}`, {
+            const response = await axios.put(`https://entry-hub-backend.vercel.app/chemistryquestions/update/${selectedQuestionId}`, {
                 questionText: newQuestion,
                 options: newOptions,
                 correctOption: correctOption - 1,
@@ -71,7 +71,7 @@ const ManageChemistryMcq = () => {
     // Define addNewQuestion function here
     const addNewQuestion = async () => {
         try {
-            const response = await axios.post('http://localhost:4000/chemistryquestions/create', {
+            const response = await axios.post('https://entry-hub-backend.vercel.app/chemistryquestions/create', {
                 questionText: newQuestion,
                 options: newOptions,
                 correctOption: correctOption - 1,
@@ -92,7 +92,7 @@ const ManageChemistryMcq = () => {
 
     const deleteQuestion = async (questionId) => {
         try {
-            const response = await axios.delete(`http://localhost:4000/chemistryquestions/${questionId}`);
+            const response = await axios.delete(`https://entry-hub-backend.vercel.app/chemistryquestions/${questionId}`);
 
             if (response.status === 200) {
                 // Successfully deleted the question

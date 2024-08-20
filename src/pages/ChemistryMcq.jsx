@@ -18,7 +18,7 @@ const ChemistryMcq = () => {
       setError(null);
 
       try {
-        const response = await axios.get('http://localhost:4000/chemistryquestions/');
+        const response = await axios.get('https://entry-hub-backend.vercel.app/chemistryquestions/');
         const data = response.data;
 
         if (Array.isArray(data)) {

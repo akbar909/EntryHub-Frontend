@@ -18,7 +18,7 @@ const PhysicsMcq = () => {
       setError(null);
 
       try {
-        const response = await axios.get('http://localhost:4000/physicsquestions/');
+        const response = await axios.get('https://entry-hub-backend.vercel.app/physicsquestions/');
         const data = response.data;
 
         if (Array.isArray(data)) {
